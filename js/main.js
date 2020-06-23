@@ -1,13 +1,16 @@
 const keys = document.querySelectorAll(".key");
 
+window.addEventListener("load", registerEvents);
 
-keys.forEach(function (key) {
-    key.addEventListener("click", playNote);
-    key.addEventListener("transitionend", removerPlayingClass);
-});
+function registerEvents(){
 
-
-window.addEventListener("keydown", playNote);
+    keys.forEach(function (key) {
+        key.addEventListener("click", playNote);
+        key.addEventListener("transitionend", removerPlayingClass);
+    });
+    
+    window.addEventListener("keydown", playNote);
+}
 
 
 function playNote(event) {
